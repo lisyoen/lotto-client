@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>QR Reader</title>
+    <script src="html5-qrcode.min.js"></script>
+    <!-- <meta charset="utf-8">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="./img/lotto-icon-32.png">
+    <link rel="apple-touch-icon" href="./img/lotto-icon-256.png">
+    <link rel="apple-touch-startup-image" href="./img/lotto-icon-512.png">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no"> -->
+</head>
+
+<body>
+    <div style="width: 100%" id="reader"></div>
+    <a href="http://localhost/">Localhost</a>
+    <div>
+        <input type="file" id="file" />
+        <button id="read-file">Read File</button>
+    </div>
+    <div id="lotto_output">
+
+    </div>
+    <div>
+        <textarea name="textOutput" id="textOutput" rows="12" cols="80"></textarea>
+    </div>
+    <script>
+        var encoder = new TextEncoder("ascii");
+        var decoder = new TextDecoder("ascii");
+        var base64Table = encoder.encode('ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789+/=');
+        function toBase64(dataArr) {
+            var padding = dataArr.byteLength % 3;
+            var len = dataArr.byteLength - padding;
+            padding = padding > 0 ? (3 - padding) : 0;
+            var outputLen = ((len / 3) * 4) + (padding > 0 ? 4 : 0);
+            var output = new Uint8Array(outputLen);
+            var outputCtr = 0;
+            for (var i = 0; i < len; i += 3) {
+                var buffer = ((dataArr[i] & 0xFF) << 16) | ((dataArr[i + 1] & 0xFF) << 8) | (dataArr[i + 2] & 0xFF);
+                output[outputCtr++] = base64Table[buffer >> 18];
+                output[outputCtr++] = base64Table[(buffer >> 12) & 0x3F];
+                output[outputCtr++] = base64Table[(buffer >> 6) & 0x3F];
+                output[outputCtr++] = base64Table[buffer & 0x3F];
+            }
+            if (padding == 1) {
+                var buffer = ((dataArr[len] & 0xFF) << 8) | (dataArr[len + 1] & 0xFF);
+                output[outputCtr++] = base64Table[buffer >> 10];
+                output[outputCtr++] = base64Table[(buffer >> 4) & 0x3F];
+                output[outputCtr++] = base64Table[(buffer << 2) & 0x3F];
+                output[outputCtr++] = base64Table[64];
+            } else if (padding == 2) {
+                var buffer = dataArr[len] & 0xFF;
+                output[outputCtr++] = base64Table[buffer >> 2];
+                output[outputCtr++] = base64Table[(buffer << 4) & 0x3F];
+                output[outputCtr++] = base64Table[64];
+                output[outputCtr++] = base64Table[64];
+            }
+            var ret = decoder.decode(output);
+            output = null;
+            dataArr = null;
+            return ret;
+        }
+
+
+        document.querySelector("#read-file").addEventListener('click', function () {
+            // no file selected to read
+            if (document.querySelector("#file").value == '') {
+                console.log('No file selected');
+                return;
+            }
+
+            var file = document.querySelector("#file").files[0];
+
+            var reader = new FileReader();
+            reader.onload = function (e) {
+                // binary data
+                console.log(e.target.result);
+                document.querySelector('#textInput').value = e.target.result;
+                document.querySelector('#textOutput').value = toBase64(new Int8Array(e.target.result));
+            };
+            reader.onerror = function (e) {
+                // error occurred
+                console.log('Error : ' + e.type);
+            };
+            // reader.readAsBinaryString(file);
+            reader.readAsArrayBuffer(file);
+        });
+
+        function getRound(url) {
+            let urls = url.split('&');
+            let nums = urls[1].split('m');
+            return nums[0].substr(2) * 1;
+        }
+
+        function parsenums(url) {
+            let urls = url.split('&');
+            let nums = urls[1].split('m');
+            return [nums[1], nums[2], nums[3], nums[4], nums[5], nums[6]];
+        }
+        function onScanSuccess(decodedText, decodedResult) {
+            // Handle on success condition with the decoded text or result.
+            console.log(`Scan result: ${decodedText}`, decodedResult);
+        }
+
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", { fps: 10, qrbox: 250 });
+        html5QrcodeScanner.render(onScanSuccess);
+
+        // function onScanSuccess(decodedText, decodedResult) {
+        //     // Handle on success condition with the decoded text or result.
+        //     console.log(`Scan result: ${decodedText}`, decodedResult);
+        //     // if (decodedText.indexOf('http') === 0) {
+        //     //     let output = document.getElementById('lotto_output');
+        //     //     let nums = parsenums(decodedText);
+        //     //     console.log(nums);
+        //     //     output.innerText = '회차: ' + getRound(decodedText) + '<br>'
+        //     //     nums[0] +  + '<br>'
+        //     //     nums[1] +  + '<br>'
+        //     //     nums[2] +  + '<br>'
+        //     //     nums[3] +  + '<br>'
+        //     //     nums[4] +  + '<br>'
+        //     //     nums[5] +  + '<br>';
+        //     //     //location.href = decodedText;
+        //     // }
+        //     html5QrcodeScanner.clear();
+        // }
+
+        var html5QrcodeScanner = new Html5QrcodeScanner(
+            "reader", { fps: 10, qrbox: 250 });
+        html5QrcodeScanner.render(onScanSuccess);
+    </script>
+</body>
+
+</html>
