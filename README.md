@@ -9,3 +9,5 @@ https://github.com/lisyoen/qrgen
 
 테스트용 QR Code Generator
 https://qr-creator.com/plain-text.php
+
+vscode online 에서 수정되나 확인
