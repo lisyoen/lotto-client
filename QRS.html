@@ -19,11 +19,10 @@
     <script>
         // Install axios by running "npm install axios" in your terminal
         // Define the qrPost() function with the input parameters
-        function qrPost(filename, key, filesize, offset, codesize, content) {
+        function qrPost(filename, filesize, offset, codesize, content) {
             // Define the input data as JSON
             const data = {
                 filename,
-                key,
                 filesize,
                 offset,
                 codesize,
