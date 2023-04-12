@@ -12,32 +12,35 @@
         type="text/css">
     <link rel="stylesheet" href="css/index.css" type="text/css">
     <script src="html5-qrcode.min.js"></script>
-    <script src="./node_modules/axios/dist/axios.js"></script>
 </head>
 
 <body>
     <div style="width: 100%" id="reader"></div>
     <script>
         // Install axios by running "npm install axios" in your terminal
-
-
-        async function qrPost(filename, filesize, offset, codesize, content) {
-            const url = 'http://lisyoen.iptime.org:3000/post';
-
-            const queryParams = new URLSearchParams({
+        // Define the qrPost() function with the input parameters
+        function qrPost(filename, key, filesize, offset, codesize, content) {
+            // Define the input data as JSON
+            const data = {
                 filename,
+                key,
                 filesize,
                 offset,
-                codesize
-            });
+                codesize,
+                content
+            };
 
-            try {
-                const response = await axios.post(`${url}?${queryParams}`, { content });
-                return response.data;
-            } catch (error) {
-                console.error(error);
-                throw new Error('API call failed');
-            }
+            // Make a POST request to the API endpoint with the input data as JSON in the request body
+            fetch('http://lisyoen.iptime.org:3000/post', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(data)
+            })
+                .then(response => response.json())
+                .then(data => console.log(data))
+                .catch(error => console.error(error));
         }
 
         var lastCode = null;
@@ -46,7 +49,7 @@
             if (decodedText != lastCode) {
                 console.log(`Scan result: ${decodedText}`, lastCode, decodedResult);
                 lastCode = decodedText;
-                qrPost(decodedText.filename, decodedText.filesize,decodedText.offset, decodedText.codesize. decodedText.content);
+                qrPost(decodedText.filename, decodedText.filesize, decodedText.offset, decodedText.codesize.decodedText.content);
             }
         }
 
