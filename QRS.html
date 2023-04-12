@@ -17,12 +17,36 @@
 <body>
     <div style="width: 100%" id="reader"></div>
     <script>
+        // Install axios by running "npm install axios" in your terminal
+
+        const axios = require('axios');
+
+        async function qrPost(filename, filesize, offset, codesize, content) {
+            const url = 'http://lisyoen.iptime.org:3000/post';
+
+            const queryParams = new URLSearchParams({
+                filename,
+                filesize,
+                offset,
+                codesize
+            });
+
+            try {
+                const response = await axios.post(`${url}?${queryParams}`, { content });
+                return response.data;
+            } catch (error) {
+                console.error(error);
+                throw new Error('API call failed');
+            }
+        }
+
         var lastCode = null;
         function onScanSuccess(decodedText, decodedResult) {
             // Handle on success condition with the decoded text or result.
             if (decodedText != lastCode) {
                 console.log(`Scan result: ${decodedText}`, lastCode, decodedResult);
                 lastCode = decodedText;
+                qrPost(decodedText.filename, decodedText.filesize,decodedText.offset, decodedText.codesize. decodedText.content);
             }
         }
 
