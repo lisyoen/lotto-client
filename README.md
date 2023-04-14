@@ -14,3 +14,4 @@ https://github.com/lisyoen/qrgen
 https://qr-creator.com/plain-text.php
 
 vscode online 에서 수정되나 확인
+업데이트 
