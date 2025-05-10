@@ -43,11 +43,31 @@
         }
 
         var lastCode = null;
+        var urlDisplay = document.createElement('div');
+        urlDisplay.style.position = 'fixed';
+        urlDisplay.style.bottom = '0';
+        urlDisplay.style.width = '100%';
+        urlDisplay.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+        urlDisplay.style.color = 'white';
+        urlDisplay.style.textAlign = 'center';
+        urlDisplay.style.padding = '10px';
+        urlDisplay.style.display = 'none';
+        document.body.appendChild(urlDisplay);
+
         function onScanSuccess(decodedText, decodedResult) {
             // Handle on success condition with the decoded text or result.
             if (decodedText != lastCode) {
                 console.log(`Scan result: ${decodedText}`, lastCode, decodedResult);
                 lastCode = decodedText;
+
+                // Check if the decoded text is a URL
+                if (decodedText.startsWith('http://') || decodedText.startsWith('https://')) {
+                    urlDisplay.innerHTML = `<a href="${decodedText}" target="_blank" style="color: white; text-decoration: underline;">${decodedText}</a>`;
+                    urlDisplay.style.display = 'block';
+                } else {
+                    urlDisplay.style.display = 'none';
+                }
+
                 qrPost(decodedText.filename, decodedText.filesize, decodedText.offset, decodedText.codesize.decodedText.content);
             }
         }

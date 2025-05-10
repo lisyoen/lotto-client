@@ -1,0 +1,7 @@
+아래와 같은 QRCode 리더를 개발중이야.
+
+개발하는 시스템은 이런 구조야. 깃헙 이슈 내용을 확인해.
+https://github.com/lisyoen/training/issues/1
+
+
+추가로 필요한 파일은 알려주면 전달할께.

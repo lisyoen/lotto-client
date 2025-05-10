@@ -1,0 +1,94 @@
+아래와 같은 QRCode 리더를 개발중이야.
+
+개발하는 시스템은 이런 구조야. 깃헙 이슈 내용을 확인해.
+https://github.com/lisyoen/training/issues/1
+
+
+추가로 필요한 파일은 알려주면 전달할께.
+.
+├── 5.file
+├── QR Code Scanner - ScanApp_files
+│   ├── alert-svgrepo-com.svg
+│   ├── app.v2.6.0.css
+│   ├── coffee.svg
+│   ├── coin-svgrepo-com.svg
+│   ├── copy-svgrepo-com.svg
+│   ├── dark_mode.svg
+│   ├── delete.svg
+│   ├── download.svg
+│   ├── expand_less.svg
+│   ├── index.v2.5.1.css
+│   ├── js
+│   ├── kofi2.png
+│   ├── link2.svg
+│   ├── main.css
+│   ├── menu.svg
+│   ├── qr-scan-placeholder.png
+│   ├── qr.svg
+│   ├── scanapp-ftp-award-250w.webp
+│   ├── scanapp.svg
+│   ├── settings.svg
+│   └── share-svgrepo-com.svg
+├── QRS.html
+├── QRScanner.html
+├── README.md
+├── chat.txt
+├── css
+│   └── index.css
+├── gpt.txt
+├── html5-qrcode.min.js
+├── img
+│   ├── QR Scanner_icon.pdn
+│   └── QR_Scanner_icon_128.png
+├── package-lock.json
+├── package.json
+├── pushtest.txt
+├── qrscanner.code-workspace
+├── run.bat
+├── test.html
+├── test.json
+├── test2.html
+├── tree.txt
+└── webserver.js
+
+4 directories, 41 files
+
+
+# qrreader
+QRCode Reader
+
+QRScanner page
+https://lisyoen.github.io/qrscanner/QRS.html
+
+전체 구성
+https://docs.google.com/presentation/d/11i5VOZ4MypXes8EYC-BhJEnhyhzimPf8wpFoJ1qk638/edit?usp=sharing
+
+QR Code Generator 와 연계해서 사용
+https://github.com/lisyoen/qrgen
+
+테스트용 QR Code Generator
+https://qr-creator.com/plain-text.php
+
+vscode online 에서 수정되나 확인
+package.json
+{
+  "name": "qrscanner",
+  "version": "1.0.0",
+  "description": "QRCode Reader",
+  "main": "webserver.js",
+  "scripts": {
+    "start": "node webserver",
+    "tree": "tree -I 'node_modules|dist|*.log|*.local|.vscode|.idea|.DS_Store|*.suo|*.ntvs*|*.njsproj|*.sln|*.sw?' --prune > tree.txt",
+    "gpt": "cp gpt.txt chat.txt && npm run tree && cat tree.txt >> chat.txt && echo \"\\n\" >> chat.txt && cat README.md >> chat.txt && echo package.json >> chat.txt && cat package.json >> chat.txt",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^1.3.5",
+    "body-parser": "^1.20.2",
+    "express": "^4.18.2",
+    "html5-qrcode": "^2.3.7",
+    "sqlite3": "^5.1.6"
+  }
+}

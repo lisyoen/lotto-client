@@ -1,0 +1,47 @@
+.
+├── 5.file
+├── QR Code Scanner - ScanApp_files
+│   ├── alert-svgrepo-com.svg
+│   ├── app.v2.6.0.css
+│   ├── coffee.svg
+│   ├── coin-svgrepo-com.svg
+│   ├── copy-svgrepo-com.svg
+│   ├── dark_mode.svg
+│   ├── delete.svg
+│   ├── download.svg
+│   ├── expand_less.svg
+│   ├── index.v2.5.1.css
+│   ├── js
+│   ├── kofi2.png
+│   ├── link2.svg
+│   ├── main.css
+│   ├── menu.svg
+│   ├── qr-scan-placeholder.png
+│   ├── qr.svg
+│   ├── scanapp-ftp-award-250w.webp
+│   ├── scanapp.svg
+│   ├── settings.svg
+│   └── share-svgrepo-com.svg
+├── QRS.html
+├── QRScanner.html
+├── README.md
+├── chat.txt
+├── css
+│   └── index.css
+├── gpt.txt
+├── html5-qrcode.min.js
+├── img
+│   ├── QR Scanner_icon.pdn
+│   └── QR_Scanner_icon_128.png
+├── package-lock.json
+├── package.json
+├── pushtest.txt
+├── qrscanner.code-workspace
+├── run.bat
+├── test.html
+├── test.json
+├── test2.html
+├── tree.txt
+└── webserver.js
+
+4 directories, 41 files
