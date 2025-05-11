@@ -13,4 +13,6 @@ https://github.com/lisyoen/qrgen
 테스트용 QR Code Generator
 https://qr-creator.com/plain-text.php
 
-vscode online 에서 수정되나 확인
+> 🧩 관련 프로젝트
+- [로또 클라이언트](https://github.com/lisyoen/lotto-client)
+- [로또 서버](https://github.com/lisyoen/lotto-server)
