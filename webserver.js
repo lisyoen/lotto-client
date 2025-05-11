@@ -5,11 +5,11 @@ const fs = require('fs');
 
 const app = express();
 const port = 3000;
-const savedir = 'D:\\git\\qrscanner\\';
+const savedir = 'D:\\git\\lotto-client\\';
 const fileExt = 'file';
 
 // Create a new database connection
-const db = new sqlite3.Database('qrScanner.db');
+const db = new sqlite3.Database('lotto-client.db');
 
 // Create a table for files if it does not exist
 db.run('CREATE TABLE IF NOT EXISTS files (id INTEGER PRIMARY KEY AUTOINCREMENT, postdtime DATETIME DEFAULT CURRENT_TIMESTAMP, filename TEXT UNIQUE, filesize INTEGER)');

@@ -1,5 +1,5 @@
 {
-  "name": "qrscanner",
+  "name": "lotto-client",
   "version": "1.0.0",
   "description": "QRCode Reader",
   "main": "webserver.js",

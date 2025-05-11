@@ -1,8 +1,8 @@
-# qrreader
+# lotto-client
 QRCode Reader
 
-QRScanner page
-https://lisyoen.github.io/qrscanner/QRS.html
+lotto-client page
+https://lisyoen.github.io/lotto-client/QRS.html
 
 전체 구성
 https://docs.google.com/presentation/d/11i5VOZ4MypXes8EYC-BhJEnhyhzimPf8wpFoJ1qk638/edit?usp=sharing

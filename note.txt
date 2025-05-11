@@ -6,7 +6,7 @@
 2. 서버
 
 https 가 필수라 github page 로 배포함
-https://lisyoen.github.io/qrscanner/QRS.html
+https://lisyoen.github.io/lotto-client/QRS.html
 
 로또 당첨번호 확인 URL
 https://m.dhlottery.co.kr/qr.do?method=winQr&v=0019a063038394043

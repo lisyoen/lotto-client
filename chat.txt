@@ -1,12 +1,13 @@
-아래와 같은 QRCode 리더를 개발중이야.
+아래와 같은 로또번호 관리/추천 서비스 클라이언트를 개발중이야.
 
 개발하는 시스템은 이런 구조야. 깃헙 이슈 내용을 확인해.
 https://github.com/lisyoen/training/issues/1
 
+이런 구조의 프로젝트인데 github 의 build fail 메일이 오고 있어 이거 안오게 할 수 있나?
+
 
 추가로 필요한 파일은 알려주면 전달할께.
 .
-├── 5.file
 ├── QR Code Scanner - ScanApp_files
 │   ├── alert-svgrepo-com.svg
 │   ├── app.v2.6.0.css
@@ -40,6 +41,7 @@ https://github.com/lisyoen/training/issues/1
 ├── img
 │   ├── QR Scanner_icon.pdn
 │   └── QR_Scanner_icon_128.png
+├── note.txt
 ├── package-lock.json
 ├── package.json
 ├── pushtest.txt
@@ -54,11 +56,11 @@ https://github.com/lisyoen/training/issues/1
 4 directories, 41 files
 
 
-# qrreader
+# lotto-client
 QRCode Reader
 
-QRScanner page
-https://lisyoen.github.io/qrscanner/QRS.html
+lotto-client page
+https://lisyoen.github.io/lotto-client/QRS.html
 
 전체 구성
 https://docs.google.com/presentation/d/11i5VOZ4MypXes8EYC-BhJEnhyhzimPf8wpFoJ1qk638/edit?usp=sharing
@@ -69,10 +71,12 @@ https://github.com/lisyoen/qrgen
 테스트용 QR Code Generator
 https://qr-creator.com/plain-text.php
 
-vscode online 에서 수정되나 확인
+> 🧩 관련 프로젝트
+- [로또 클라이언트](https://github.com/lisyoen/lotto-client)
+- [로또 서버](https://github.com/lisyoen/lotto-server)
 package.json
 {
-  "name": "qrscanner",
+  "name": "lotto-client",
   "version": "1.0.0",
   "description": "QRCode Reader",
   "main": "webserver.js",

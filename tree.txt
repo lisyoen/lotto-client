@@ -1,5 +1,4 @@
 .
-├── 5.file
 ├── QR Code Scanner - ScanApp_files
 │   ├── alert-svgrepo-com.svg
 │   ├── app.v2.6.0.css
@@ -33,6 +32,7 @@
 ├── img
 │   ├── QR Scanner_icon.pdn
 │   └── QR_Scanner_icon_128.png
+├── note.txt
 ├── package-lock.json
 ├── package.json
 ├── pushtest.txt
