@@ -1,5 +1,5 @@
 # lotto-client
-QRCode Reader
+Lotto Management & Recommendation Service Client 
 
 lotto-client page
 https://lisyoen.github.io/lotto-client/QRS.html
