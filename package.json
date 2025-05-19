@@ -1,7 +1,7 @@
 {
   "name": "lotto-client",
   "version": "1.0.0",
-  "description": "QRCode Reader",
+  "description": "Lotto Management & Recommendation Service Client",
   "main": "webserver.js",
   "scripts": {
     "start": "node webserver",

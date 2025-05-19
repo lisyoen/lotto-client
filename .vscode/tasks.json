@@ -1,0 +1,17 @@
+{
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Commit & Push",
+			"type": "shell",
+			"command": "powershell",
+			"args": [
+				"-Command",
+				"$msg = Read-Host 'Commit message'; git add .; git commit -m \"$msg\"; git push"
+			],
+			"group": "none",
+			"isBackground": false,
+			"problemMatcher": []
+		}
+	]
+}
