@@ -1,6 +1,9 @@
 # lotto-client
 Lotto Management & Recommendation Service Client 
 
+**프로젝트 공식 도메인:**
+http://woontouch.com/
+
 lotto-client page
 https://lisyoen.github.io/lotto-client/QRS.html
 
