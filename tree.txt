@@ -1,5 +1,8 @@
 .
-├── QR Code Scanner - ScanApp_files
+├── QRS.html
+├── QRScanner.html
+├── README.md
+├── ScanApp_files
 │   ├── alert-svgrepo-com.svg
 │   ├── app.v2.6.0.css
 │   ├── coffee.svg
@@ -21,9 +24,6 @@
 │   ├── scanapp.svg
 │   ├── settings.svg
 │   └── share-svgrepo-com.svg
-├── QRS.html
-├── QRScanner.html
-├── README.md
 ├── chat.txt
 ├── css
 │   └── index.css

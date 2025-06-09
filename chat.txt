@@ -3,12 +3,14 @@
 개발하는 시스템은 이런 구조야. 깃헙 이슈 내용을 확인해.
 https://github.com/lisyoen/training/issues/1
 
-이런 구조의 프로젝트인데 github 의 build fail 메일이 오고 있어 이거 안오게 할 수 있나?
-
+<< 요청사항 >>
 
 추가로 필요한 파일은 알려주면 전달할께.
 .
-├── QR Code Scanner - ScanApp_files
+├── QRS.html
+├── QRScanner.html
+├── README.md
+├── ScanApp_files
 │   ├── alert-svgrepo-com.svg
 │   ├── app.v2.6.0.css
 │   ├── coffee.svg
@@ -30,9 +32,6 @@ https://github.com/lisyoen/training/issues/1
 │   ├── scanapp.svg
 │   ├── settings.svg
 │   └── share-svgrepo-com.svg
-├── QRS.html
-├── QRScanner.html
-├── README.md
 ├── chat.txt
 ├── css
 │   └── index.css
